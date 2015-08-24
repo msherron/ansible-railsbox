@@ -1,4 +1,4 @@
-## Absible Rails Box
+## Ansible Rails Box
 ### An Ansible powered Rails development box
 #### By Michael Sherron
 ##### *MIT License*
