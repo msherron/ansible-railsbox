@@ -1,0 +1,32 @@
+---
+  - hosts: all
+    become: yes
+    become_method: sudo
+    tasks:
+      - name: update apt cache
+        apt: update_cache=yes
+      - name: Install ruby and rubygems.
+        apt: "name={{ item }} state=present"
+        with_items:
+          - ruby-full
+          - rubygems-integration
+      - name: install rails 4
+        apt: name=ruby-railties-4.0 state=present
+      - name: Install sqlite3
+        sudo: yes
+        apt: name=libsqlite3-dev state=present
+      - name: Install NodeJS
+        sudo: yes
+        apt: name=nodejs state=present
+      - name: Install bundler.
+        sudo: yes
+        command: gem install bundler --no-rdoc --no-ri
+      - name: Initialize default rails app.
+        command: rails new railsapp
+        args:
+          chdir: /var/www
+      - name: Start rails server in the background.
+        sudo: yes
+        command: rails s -p 80 -d
+        args: 
+          chdir: /var/www/railsapp
