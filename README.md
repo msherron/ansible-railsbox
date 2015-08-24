@@ -7,13 +7,13 @@ Need an environment to develop a Rails app with a Sqlite DB? Spin up this vagran
 
 #### Dependencies:
   * [Vagrant 1.7.2](https://www.vagrantup.com/download-archive/v1.7.2.html)
-  * [VirtualBox 4.3](https://www.virtualbox.org/wiki/Download_Old_Builds) and you might want VirtualBox GuestAdditions
+  * [VirtualBox 4.3](https://www.virtualbox.org/wiki/Download_Old_Builds)
   * [Homebrew](http://brew.sh/)
   * [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
 
 #### Detailed instructions:
   1. Make sure that you have the dependencies installed on your host machine (see links above)
-  1. Vagrant will automatically update your hosts file, if you install the hostsupdater plugin (vagrant plugin install vagrant-hostsupdater).
+  1. Vagrant will automatically update your hosts file, if you install the hostsupdater plugin (`vagrant plugin install vagrant-hostsupdater`).
   1. Once Homebrew is installed, installing Ansible is as easy as `brew install ansible`.
   1. Clone the repo: `git clone https://github.com/msherron/ansible-railsbox.git`
   1. `cd ansible-railsbox`
